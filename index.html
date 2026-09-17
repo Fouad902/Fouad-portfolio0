@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fouad KADRII — Backend Developer</title>
+<meta name="description" content="Backend Developer building scalable APIs with Node.js, NestJS, and TypeScript." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Particles canvas -->
+<canvas id="particles"></canvas>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-text mono">Fouad<span>.</span></div>
+    <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<nav id="navbar">
+  <a href="index.html" class="logo">
+    <span class="logo-dot"></span>
+    Fouad<span class="accent">.</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about" data-scroll>About</a></li>
+    <li><a href="#skills" data-scroll>Skills</a></li>
+    <li><a href="#projects" data-scroll>Projects</a></li>
+    <li><a href="#experience" data-scroll>Experience</a></li>
+    <li><a href="#contact" data-scroll>Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" data-scroll>About</a>
+  <a href="#skills" data-scroll>Skills</a>
+  <a href="#projects" data-scroll>Projects</a>
+  <a href="#experience" data-scroll>Experience</a>
+  <a href="#contact" data-scroll>Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-grid-overlay"></div>
+  <div class="container">
+    <div class="hero-badge" data-reveal>
+      <span class="dot"></span>
+      <span class="mono">Available for freelance & full-time</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="hero-line" data-reveal>
+        <span class="word">Backend</span>
+        <span class="word">Developer</span>
+      </span>
+      <span class="hero-line" data-reveal>
+        building
+        <span class="gradient-text typing" id="typingText"></span>
+        <span class="cursor-blink">|</span>
+      </span>
+    </h1>
+
+    <p class="hero-subtitle" data-reveal>
+      I'm <strong>Fouad KADRII</strong> — I build production-grade APIs and backend systems with
+      <strong>Node.js</strong>, <strong>NestJS</strong>, and <strong>TypeScript</strong>.
+      Currently working on <strong>Inboxex CRM</strong>, serving clients in Egypt and international markets.
+    </p>
+
+    <div class="hero-cta" data-reveal>
+      <a href="#projects" class="btn btn-primary magnetic" data-scroll>
+        <span>View My Work</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8h14M9 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-ghost magnetic" data-scroll>
+        <span>Get in Touch</span>
+      </a>
+    </div>
+
+    <div class="hero-stack" data-reveal>
+      <span class="stack-chip">Node.js</span>
+      <span class="stack-chip">NestJS</span>
+      <span class="stack-chip">TypeScript</span>
+      <span class="stack-chip">MongoDB</span>
+      <span class="stack-chip">Docker</span>
+      <span class="stack-chip">Redis</span>
+      <span class="stack-chip">Angular</span>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span class="mono">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label mono">// About</span>
+      <h2 class="section-title">Backend engineer with a<br/>production-first mindset</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text" data-reveal>
+        <p>
+          I'm a backend developer with hands-on experience building <strong>real-world production systems</strong>
+          — not just academic projects. I currently contribute to <strong>Inboxex CRM</strong>,
+          a live CRM platform used by clients in Egypt and international markets.
+        </p>
+        <p>
+          My focus is on <strong>clean architecture</strong>, <strong>performance optimization</strong>,
+          and <strong>solving complex problems</strong>. I've worked across the stack — from designing
+          backend APIs with NestJS and MongoDB, to authentication flows, Docker environments,
+          and Angular frontend integration.
+        </p>
+        <p>
+          I also bring a creative edge through <strong>AI content generation</strong> and prompt engineering,
+          having delivered 150+ images and 30+ videos across 5+ AI platforms.
+        </p>
+      </div>
+      <div class="about-stats" data-reveal>
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="40" data-suffix="%">0%</div>
+          <div class="stat-label">Faster report generation via SQL optimization</div>
+        </div>
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="96" data-suffix="%">0%</div>
+          <div class="stat-label">Accuracy in AI donation image validation</div>
+        </div>
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="150" data-suffix="+">0+</div>
+          <div class="stat-label">AI-generated visual assets delivered</div>
+        </div>
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="5" data-suffix="+">0+</div>
+          <div class="stat-label">AI platforms mastered for content pipelines</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label mono">// Skills</span>
+      <h2 class="section-title">Technical toolkit</h2>
+      <p class="section-desc">Technologies and tools I use daily to design, build, and ship backend systems.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card tilt" data-reveal>
+        <h3><span class="skill-icon">⚙️</span> Backend & Frameworks</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Node.js</span><span class="skill-tag">NestJS</span>
+          <span class="skill-tag">Express.js</span><span class="skill-tag">Spring Boot</span>
+          <span class="skill-tag">Java</span>
+        </div>
+      </div>
+      <div class="skill-card tilt" data-reveal>
+        <h3><span class="skill-icon">💻</span> Languages</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">TypeScript</span><span class="skill-tag">JavaScript (ES6+)</span>
+          <span class="skill-tag">Java</span><span class="skill-tag">C++</span>
+        </div>
+      </div>
+      <div class="skill-card tilt" data-reveal>
+        <h3><span class="skill-icon">🗄️</span> Databases</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">MongoDB</span><span class="skill-tag">MySQL</span>
+          <span class="skill-tag">SQL Server</span><span class="skill-tag">TypeORM</span>
+        </div>
+      </div>
+      <div class="skill-card tilt" data-reveal>
+        <h3><span class="skill-icon">🔐</span> Auth & Security</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">JWT</span><span class="skill-tag">RBAC</span>
+          <span class="skill-tag">Authentication Flows</span><span class="skill-tag">Session Management</span>
+        </div>
+      </div>
+      <div class="skill-card tilt" data-reveal>
+        <h3><span class="skill-icon">🛠️</span> Tools & DevOps</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Docker</span><span class="skill-tag">Redis</span>
+          <span class="skill-tag">Git/GitHub</span><span class="skill-tag">Postman</span>
+          <span class="skill-tag">Cloudinary</span>
+        </div>
+      </div>
+      <div class="skill-card tilt" data-reveal>
+        <h3><span class="skill-icon">🎨</span> Frontend & AI</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Angular</span><span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">Generative AI</span><span class="skill-tag">Prompt Engineering</span>
+          <span class="skill-tag">Figma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="section">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label mono">// Projects</span>
+      <h2 class="section-title">Selected work</h2>
+      <p class="section-desc">Real-world systems I've built or contributed to — click any project to see the full case study.</p>
+    </div>
+    <div class="projects-grid" id="projectsGrid">
+      <!-- Rendered by JS from projects.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="section">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label mono">// Experience</span>
+      <h2 class="section-title">Where I've worked</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item current" data-reveal>
+        <div class="timeline-date mono">2026 — Present · Giza, Egypt</div>
+        <div class="timeline-role">Freelance Software Developer</div>
+        <div class="timeline-company">Inboxex CRM</div>
+        <p class="timeline-desc">
+          Contributing to backend & frontend of a production CRM platform used by active clients.
+          Building APIs with NestJS, TypeScript, and MongoDB, handling auth flows, and collaborating
+          with the team to ship reliable features.
+        </p>
+      </div>
+      <div class="timeline-item current" data-reveal>
+        <div class="timeline-date mono">2026 — Present</div>
+        <div class="timeline-role">AI Creator</div>
+        <div class="timeline-company">ArcTeam</div>
+        <p class="timeline-desc">
+          Producing high-quality AI-generated images and videos using Generative AI and prompt
+          engineering across multiple platforms, delivering consistent visual content for real-world projects.
+        </p>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-date mono">2025</div>
+        <div class="timeline-role">Backend Developer Intern</div>
+        <div class="timeline-company">Misr Insurance</div>
+        <p class="timeline-desc">
+          Engineered backend logic with Java & Spring Boot, implemented SQL interactions, and applied
+          TypeScript to improve code maintainability and type safety.
+        </p>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-date mono">2025</div>
+        <div class="timeline-role">Software Engineer Intern</div>
+        <div class="timeline-company">Misr Insurance</div>
+        <p class="timeline-desc">
+          Built responsive web pages with HTML, CSS, and JavaScript, practiced SQL operations, and
+          managed version control with Git/GitHub.
+        </p>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-date mono">2022 — 2025 · 6 October, Giza</div>
+        <div class="timeline-role">Bachelor's in Computer Science</div>
+        <div class="timeline-company">6 October University</div>
+        <p class="timeline-desc">
+          Studied Data Structures, Algorithms, Databases, and Software Engineering.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <div class="contact-card" data-reveal>
+      <span class="section-label mono" style="justify-content:center;">// Contact</span>
+      <h2>Let's build something together</h2>
+      <p class="contact-sub">
+        I'm open to freelance projects and full-time backend roles.<br/>
+        Drop me a message — I usually reply within a day.
+      </p>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required placeholder="What's this about?" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary magnetic" id="submitBtn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-loading" hidden>Sending...</span>
+        </button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+
+      <div class="contact-links">
+        <a href="mailto:fouadkadrii896@gmail.com" class="btn btn-ghost magnetic">
+          ✉ Email
+        </a>
+        <a href="https://linkedin.com/in/fouadkadrii" target="_blank" rel="noopener" class="btn btn-ghost magnetic">
+          LinkedIn
+        </a>
+        <a href="https://github.com/fouadkadrii" target="_blank" rel="noopener" class="btn btn-ghost magnetic">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container footer-inner">
+    <p>Designed & built by <span class="mono accent">Fouad KADRII</span></p>
+    <p class="mono footer-year">© <span id="year"></span></p>
+  </div>
+</footer>
+
+<script src="js/projects.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
