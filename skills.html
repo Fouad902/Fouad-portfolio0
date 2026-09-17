@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skills — Fouad KADRII</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div class="page-transition"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<canvas id="particles" class="particles-canvas"></canvas>
+<div class="bg-blob bg-blob-1"></div>
+<div class="bg-blob bg-blob-2"></div>
+<div class="bg-blob bg-blob-3"></div>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-dot"></span>
+    Fouad<span class="accent">.</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="icon-btn" id="themeToggle">🌙</button>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="section" style="padding-top: 160px;">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label">// Skills</span>
+      <h1 class="section-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">My toolkit</h1>
+      <p class="section-desc">Technologies, tools, and languages I use to design, build, and ship backend systems.</p>
+    </div>
+
+    <div class="skills-categories">
+      <div class="skill-cat tilt" data-reveal>
+        <h3>⚙️ Backend & Frameworks</h3>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Node.js / NestJS</span><span class="level">95%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="95"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Express.js</span><span class="level">90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Spring Boot</span><span class="level">75%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="75"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-cat tilt" data-reveal>
+        <h3>💻 Languages</h3>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>TypeScript</span><span class="level">92%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>JavaScript (ES6+)</span><span class="level">92%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Java</span><span class="level">78%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="78"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>C++</span><span class="level">70%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="70"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🗄️ Databases</h3>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>MongoDB</span><span class="level">90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>MySQL</span><span class="level">85%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>SQL Server</span><span class="level">85%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>TypeORM</span><span class="level">82%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="82"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🔐 Auth & Security</h3>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>JWT Authentication</span><span class="level">90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>RBAC</span><span class="level">88%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Session Management</span><span class="level">85%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🛠️ Tools & DevOps</h3>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Docker</span><span class="level">80%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Git / GitHub</span><span class="level">92%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Redis</span><span class="level">75%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="75"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Postman</span><span class="level">90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🎨 Frontend & AI</h3>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Angular</span><span class="level">78%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="78"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>HTML / CSS</span><span class="level">88%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Prompt Engineering</span><span class="level">92%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Figma</span><span class="level">80%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label">// Currently Learning</span>
+      <h2 class="section-title">On my learning path</h2>
+    </div>
+    <div class="skills-categories" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 40px;">
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🚀 Microservices</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Message queues, service communication patterns, and distributed systems.</p>
+      </div>
+      <div class="skill-cat tilt" data-reveal>
+        <h3>☁️ Cloud (AWS)</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">EC2, S3, RDS, and deploying production workloads in the cloud.</p>
+      </div>
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🧪 Testing</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Unit, integration, and E2E testing for backend systems.</p>
+      </div>
+      <div class="skill-cat tilt" data-reveal>
+        <h3>📊 System Design</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Scalability, caching strategies, and designing for high availability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-card" data-reveal style="margin: 60px auto; max-width: 900px;">
+  <span class="section-label" style="justify-content: center;">// Let's talk</span>
+  <h2>Need a backend developer?</h2>
+  <p style="color: var(--text-muted); margin-bottom: 32px;">I bring production experience and a passion for clean code.</p>
+  <div class="contact-links">
+    <a href="contact.html" class="btn btn-primary magnetic"><span>Get in touch</span></a>
+    <a href="projects.html" class="btn btn-ghost magnetic"><span>See my work</span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Fouad<span class="accent">.</span></h3>
+        <p>Backend developer building scalable systems with Node.js, NestJS, and TypeScript.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://github.com/fouadkadrii" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/fouadkadrii" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:fouadkadrii896@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Fouad KADRII</span>
+      <span>Built with ☕ and clean code</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/transitions.js"></script>
+</body>
+</html>

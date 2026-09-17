@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Project — Fouad KADRII</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div class="page-transition"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<canvas id="particles" class="particles-canvas"></canvas>
+<div class="bg-blob bg-blob-1"></div>
+<div class="bg-blob bg-blob-2"></div>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-dot"></span>
+    Fouad<span class="accent">.</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="icon-btn" id="themeToggle">🌙</button>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main class="case-study" id="caseStudy"></main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Fouad KADRII</span>
+      <span>Built with ☕ and clean code</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/transitions.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('p');
+    const main = document.getElementById('caseStudy');
+    const p = getProject(slug);
+
+    if (!p) {
+      main.innerHTML = `
+        <div class="container" style="padding-top: 200px; text-align: center;">
+          <h1 class="section-title">Project not found</h1>
+          <p class="section-desc" style="margin: 20px auto;">The project you're looking for doesn't exist.</p>
+          <a href="projects.html" class="btn btn-primary magnetic"><span>← All Projects</span></a>
+        </div>
+      `;
+      return;
+    }
+
+    document.title = `${p.title} — Fouad KADRII`;
+    const idx = PROJECTS.findIndex(x => x.slug === p.slug);
+    const prev = PROJECTS[(idx - 1 + PROJECTS.length) % PROJECTS.length];
+    const next = PROJECTS[(idx + 1) % PROJECTS.length];
+
+    main.innerHTML = `
+      <header class="case-hero">
+        <div class="container">
+          <a href="projects.html" class="back-link">← All Projects</a>
+          <div class="case-badge ${p.badgeClass}">${p.badge}</div>
+          <h1 class="case-title split-text">${p.title}</h1>
+          <p class="case-subtitle">${p.subtitle}</p>
+          <div class="case-tech">
+            ${p.tech.map(t => `<span class="tech-chip">${t}</span>`).join('')}
+          </div>
+          ${p.links && (p.links.live || p.links.github) ? `
+            <div class="case-links">
+              ${p.links.live ? `<a href="${p.links.live}" target="_blank" rel="noopener" class="btn btn-primary magnetic"><span>Live Site →</span></a>` : ''}
+              ${p.links.github ? `<a href="${p.links.github}" target="_blank" rel="noopener" class="btn btn-ghost magnetic"><span>GitHub</span></a>` : ''}
+            </div>
+          ` : ''}
+        </div>
+      </header>
+
+      <section class="case-section">
+        <div class="container container-narrow">
+          <div class="case-block" data-reveal>
+            <span class="section-label">// Overview</span>
+            <p class="case-text">${p.overview}</p>
+          </div>
+
+          <div class="case-block" data-reveal>
+            <span class="section-label">// The Problem</span>
+            <p class="case-text">${p.problem}</p>
+          </div>
+
+          <div class="case-block" data-reveal>
+            <span class="section-label">// The Solution</span>
+            <ul class="case-list">
+              ${p.solution.map(s => `<li>${s}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="case-block" data-reveal>
+            <span class="section-label">// Results</span>
+            <div class="results-grid">
+              ${p.results.map(r => `
+                <div class="result-card tilt">
+                  <div class="result-num">${r.num}</div>
+                  <div class="result-label">${r.label}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="case-block" data-reveal>
+            <span class="section-label">// Tech Stack</span>
+            <div class="stack-grid">
+              ${Object.entries(p.stack).map(([cat, items]) => `
+                <div class="stack-cat">
+                  <h4>${cat}</h4>
+                  <div class="skill-tags" style="display:flex;gap:6px;flex-wrap:wrap;">
+                    ${items.map(i => `<span class="chip">${i}</span>`).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="case-block case-lessons" data-reveal>
+            <span class="section-label">// Lessons Learned</span>
+            <p class="case-text">${p.lessons}</p>
+          </div>
+
+          <div class="case-nav" data-reveal>
+            <a href="project.html?p=${prev.slug}" class="btn btn-ghost magnetic"><span>← ${prev.title}</span></a>
+            <a href="project.html?p=${next.slug}" class="btn btn-primary magnetic"><span>${next.title} →</span></a>
+          </div>
+        </div>
+      </section>
+    `;
+
+    if (window.initReveals) initReveals();
+    if (window.initTilt) initTilt();
+    if (window.initSplitText) initSplitText();
+    if (window.initMagnetic) initMagnetic();
+  });
+</script>
+</body>
+</html>

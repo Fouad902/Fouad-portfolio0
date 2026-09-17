@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog — Fouad KADRII</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div class="page-transition"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<canvas id="particles" class="particles-canvas"></canvas>
+<div class="bg-blob bg-blob-1"></div>
+<div class="bg-blob bg-blob-2"></div>
+<div class="bg-blob bg-blob-3"></div>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-dot"></span>
+    Fouad<span class="accent">.</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="icon-btn" id="themeToggle">🌙</button>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="section" style="padding-top: 160px;">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label">// Blog</span>
+      <h1 class="section-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">Notes & thoughts</h1>
+      <p class="section-desc">Writing about backend, architecture, and things I learn while building.</p>
+    </div>
+
+    <div class="blog-grid" id="blogGrid"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Fouad<span class="accent">.</span></h3>
+        <p>Backend developer building scalable systems with Node.js, NestJS, and TypeScript.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://github.com/fouadkadrii" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/fouadkadrii" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:fouadkadrii896@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Fouad KADRII</span>
+      <span>Built with ☕ and clean code</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/transitions.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('blogGrid');
+    grid.innerHTML = POSTS.map((post, i) => `
+      <article class="post-card tilt" data-reveal style="--delay:${i * 0.08}s">
+        <div class="post-meta">
+          <span>${new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+          <span>·</span>
+          <span>${post.readTime}</span>
+        </div>
+        <h3 class="post-title">${post.title}</h3>
+        <p class="post-excerpt">${post.excerpt}</p>
+        <div class="post-tags">
+          ${post.tags.map(t => `<span class="chip">${t}</span>`).join('')}
+        </div>
+      </article>
+    `).join('');
+    if (window.initReveals) initReveals();
+    if (window.initTilt) initTilt();
+  });
+</script>
+</body>
+</html>

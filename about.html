@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Fouad KADRII</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div class="page-transition"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<canvas id="particles" class="particles-canvas"></canvas>
+<div class="bg-blob bg-blob-1"></div>
+<div class="bg-blob bg-blob-2"></div>
+<div class="bg-blob bg-blob-3"></div>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-dot"></span>
+    Fouad<span class="accent">.</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="icon-btn" id="themeToggle">🌙</button>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="section" style="padding-top: 160px;">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label">// About</span>
+      <h1 class="section-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">Hey, I'm Fouad</h1>
+    </div>
+    <div class="about-grid" style="margin-top: 40px;">
+      <div class="about-text" data-reveal="left">
+        <p>
+          I'm a <strong>backend developer</strong> based in Giza, Egypt, focused on building
+          <strong>production-grade systems</strong> with Node.js, NestJS, and TypeScript.
+        </p>
+        <p>
+          I got into backend development because I love the invisible work — the APIs that just work,
+          the databases that scale, the authentication that doesn't leak. I enjoy thinking about
+          <strong>edge cases</strong>, <strong>clean architecture</strong>, and how to make code
+          that other developers can read six months later.
+        </p>
+        <p>
+          Currently, I contribute to <strong>Inboxex CRM</strong>, a production platform used by
+          clients across Egypt and international markets. Before that, I interned at
+          <strong>Misr Insurance</strong> working on Spring Boot and frontend features.
+        </p>
+        <p>
+          Outside of backend work, I also do <strong>AI content creation</strong> — prompt engineering,
+          generative imagery, and visual storytelling. It keeps my creative side alive and taught me
+          a completely different kind of "systems thinking".
+        </p>
+      </div>
+      <div class="about-stats" data-reveal="right">
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="3" data-suffix="+">0+</div>
+          <div class="stat-label">Years of hands-on coding</div>
+        </div>
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="8" data-suffix="+">0+</div>
+          <div class="stat-label">Projects built & shipped</div>
+        </div>
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="6" data-suffix="+">0+</div>
+          <div class="stat-label">Certifications earned</div>
+        </div>
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="2" data-suffix="">0</div>
+          <div class="stat-label">Languages spoken (AR / EN)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-narrow">
+    <div data-reveal>
+      <span class="section-label">// Journey</span>
+      <h2 class="section-title">The path so far</h2>
+    </div>
+    <div class="timeline" style="margin-top: 40px;">
+      <div class="timeline-item current" data-reveal>
+        <div class="timeline-date">2026 — Present</div>
+        <div class="timeline-role">Freelance Software Developer</div>
+        <div class="timeline-company">Inboxex CRM</div>
+        <p class="timeline-desc">Contributing to a live CRM platform. Building APIs with NestJS, handling auth flows, debugging production, working with Docker + Redis.</p>
+      </div>
+      <div class="timeline-item current" data-reveal>
+        <div class="timeline-date">2026 — Present</div>
+        <div class="timeline-role">AI Creator</div>
+        <div class="timeline-company">ArcTeam</div>
+        <p class="timeline-desc">Producing AI-generated visual content at scale — 150+ images, 30+ videos across 5+ AI platforms.</p>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-date">2025</div>
+        <div class="timeline-role">Backend Developer Intern</div>
+        <div class="timeline-company">Misr Insurance</div>
+        <p class="timeline-desc">Java + Spring Boot backend logic, SQL interactions, TypeScript improvements.</p>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-date">2025</div>
+        <div class="timeline-role">Software Engineer Intern</div>
+        <div class="timeline-company">Misr Insurance</div>
+        <p class="timeline-desc">Responsive web pages with HTML, CSS, JavaScript. SQL operations and Git workflow.</p>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-date">2022 — 2025</div>
+        <div class="timeline-role">Bachelor's in Computer Science</div>
+        <div class="timeline-company">6 October University</div>
+        <p class="timeline-desc">Data Structures, Algorithms, Databases, Software Engineering. Graduation project: LoafOfLife.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label">// Certifications</span>
+      <h2 class="section-title">Courses & certifications</h2>
+    </div>
+    <div class="skills-categories" style="margin-top: 40px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🎓 NestJS — Udemy</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Comprehensive NestJS course covering modules, providers, guards, interceptors, and production patterns.</p>
+      </div>
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🎓 Express & MongoDB — Udemy</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Building RESTful APIs with Express and MongoDB, authentication, security, and deployment.</p>
+      </div>
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🎓 NodeJS — Udemy</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Deep dive into Node.js runtime, event loop, streams, and backend architecture.</p>
+      </div>
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🎓 Java + SQL</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Core Java, JDBC, and relational database design with SQL Server and MySQL.</p>
+      </div>
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🎓 MongoDB Basics</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Document modeling, aggregation pipelines, indexing, and performance optimization.</p>
+      </div>
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🎓 Problem Solving</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Data structures, algorithms, and continuous practice on real coding challenges.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-narrow">
+    <div data-reveal>
+      <span class="section-label">// Beyond Code</span>
+      <h2 class="section-title">When I'm not coding</h2>
+    </div>
+    <div class="about-text" data-reveal style="margin-top: 24px;">
+      <p>
+        I'm fascinated by <strong>generative AI</strong> — not just as a tool, but as a creative medium.
+        I spend a lot of time experimenting with prompt engineering, exploring how different models
+        interpret visual and textual concepts.
+      </p>
+      <p>
+        I also enjoy <strong>writing</strong> about what I learn — turning complex backend concepts into
+        clear explanations for other developers. Some of that writing lives in the
+        <a href="blog.html" style="color: var(--accent);">blog</a> section.
+      </p>
+      <p>
+        And when I need to unplug, I read, play chess, and try to convince myself that I'll wake up
+        early tomorrow. (I won't.)
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-card" data-reveal style="margin: 60px auto; max-width: 900px;">
+  <span class="section-label" style="justify-content: center;">// Let's connect</span>
+  <h2>Want to work together?</h2>
+  <p style="color: var(--text-muted); margin-bottom: 32px;">I'm open to freelance projects and full-time backend roles.</p>
+  <div class="contact-links">
+    <a href="contact.html" class="btn btn-primary magnetic"><span>Get in touch</span></a>
+    <a href="projects.html" class="btn btn-ghost magnetic"><span>See my work</span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Fouad<span class="accent">.</span></h3>
+        <p>Backend developer building scalable systems with Node.js, NestJS, and TypeScript.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://github.com/fouadkadrii" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/fouadkadrii" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:fouadkadrii896@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Fouad KADRII</span>
+      <span>Built with ☕ and clean code</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/transitions.js"></script>
+</body>
+</html>
