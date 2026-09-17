@@ -12,7 +12,7 @@ const PROJECTS = [
     subtitle: 'A real-world CRM platform serving clients in Egypt and international markets',
     desc: 'Contributing to backend and frontend of a live CRM used by active clients, working with NestJS, TypeScript, MongoDB, Redis, and Docker.',
     tech: ['NestJS', 'TypeScript', 'MongoDB', 'Redis', 'Docker', 'Angular'],
-    links: { live: https://dev.inboxak.app/, github: null },
+    links: { live: 'https://dev.inboxak.app/', github: null },
     featured: true,
     overview: 'Inboxex is a production CRM platform used by clients across Egypt and international markets. As part of the development team, I contribute to both backend and frontend features — from API design and authentication flows to debugging production issues and shipping reliable features.',
     problem: 'CRM platforms handle sensitive customer data, complex authentication flows, and need to remain responsive under load. The challenge was building and maintaining APIs that could scale while ensuring security, session consistency, and smooth user experience across a distributed team.',
