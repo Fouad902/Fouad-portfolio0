@@ -4,12 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>404 — Fouad KADRII</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/animations.css">
-<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="animations.css">
+<link rel="stylesheet" href="pages.css">
 </head>
 <body>
 
@@ -22,13 +23,20 @@
 <div class="bg-blob bg-blob-2"></div>
 <div class="bg-blob bg-blob-3"></div>
 
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-text">Fouad<span>.</span></div>
+    <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+  </div>
+</div>
+
 <nav class="navbar" id="navbar">
-  <a href="index.html" class="nav-logo">
+  <a href="main.html" class="nav-logo">
     <span class="nav-logo-dot"></span>
     Fouad<span class="accent">.</span>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="main.html">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -47,17 +55,17 @@
       <h2 class="section-title" style="margin-top: 20px;">Page not found</h2>
       <p class="section-desc" style="margin: 0 auto 40px;">The page you're looking for doesn't exist or has been moved.</p>
       <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-        <a href="index.html" class="btn btn-primary magnetic"><span>← Back Home</span></a>
+        <a href="main.html" class="btn btn-primary magnetic"><span>← Back Home</span></a>
         <a href="projects.html" class="btn btn-ghost magnetic"><span>See Projects</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
-<script src="js/cursor.js"></script>
-<script src="js/particles.js"></script>
-<script src="js/transitions.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
+<script src="cursor.js"></script>
+<script src="particles.js"></script>
+<script src="transitions.js"></script>
 </body>
 </html>

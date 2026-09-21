@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fouad KADRII — Backend Developer</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Backend Developer building scalable APIs with Node.js, NestJS, and TypeScript." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="animations.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+<div class="page-transition"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<canvas id="particles" class="particles-canvas"></canvas>
+<div class="bg-blob bg-blob-1"></div>
+<div class="bg-blob bg-blob-2"></div>
+<div class="bg-blob bg-blob-3"></div>
+
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-text">Fouad<span>.</span></div>
+    <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+  </div>
+</div>
+
+<nav class="navbar" id="navbar">
+  <a href="main.html" class="nav-logo">
+    <span class="nav-logo-dot"></span>
+    Fouad<span class="accent">.</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="main.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="icon-btn" id="themeToggle" aria-label="Theme">🌙</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="main.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="grid-overlay"></div>
+  <div class="hero-floats">
+    <div class="float-card float-card-1"><span class="dot"></span> NestJS API running</div>
+    <div class="float-card float-card-2">✓ Tests passing</div>
+    <div class="float-card float-card-3">docker: container up</div>
+  </div>
+  <div class="container">
+    <div class="hero-badge" data-reveal>
+      <span class="dot"></span>
+      <span class="mono">Available for freelance & full-time</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="hero-line split-text">Backend Developer</span>
+      <span class="hero-line">
+        building <span class="typing" id="typingText"></span><span class="cursor-blink">|</span>
+      </span>
+    </h1>
+
+    <p class="hero-subtitle" data-reveal>
+      I'm <strong>Fouad KADRII</strong> — I build production-grade APIs and backend systems with
+      <strong>Node.js</strong>, <strong>NestJS</strong>, and <strong>TypeScript</strong>.
+      Currently working on <strong>Inboxex CRM</strong>, serving clients in Egypt and international markets.
+    </p>
+
+    <div class="hero-cta" data-reveal>
+      <a href="projects.html" class="btn btn-primary magnetic">
+        <span>View My Work</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8h14M9 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="contact.html" class="btn btn-ghost magnetic"><span>Get in Touch</span></a>
+    </div>
+
+    <div class="hero-stack" data-reveal>
+      <span class="chip">Node.js</span>
+      <span class="chip">NestJS</span>
+      <span class="chip">TypeScript</span>
+      <span class="chip">MongoDB</span>
+      <span class="chip">Docker</span>
+      <span class="chip">Redis</span>
+      <span class="chip">Angular</span>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Node.js <span class="dot"></span></span>
+    <span class="marquee-item">NestJS <span class="dot"></span></span>
+    <span class="marquee-item">TypeScript <span class="dot"></span></span>
+    <span class="marquee-item">MongoDB <span class="dot"></span></span>
+    <span class="marquee-item">Docker <span class="dot"></span></span>
+    <span class="marquee-item">Redis <span class="dot"></span></span>
+    <span class="marquee-item">Angular <span class="dot"></span></span>
+    <span class="marquee-item">Express <span class="dot"></span></span>
+    <span class="marquee-item">Spring Boot <span class="dot"></span></span>
+  </div>
+</div>
+
+<!-- ============ ABOUT PREVIEW ============ -->
+<section class="section">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label">// About</span>
+      <h2 class="section-title">Backend engineer with a<br/>production-first mindset</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text" data-reveal="left">
+        <p>
+          I'm a backend developer with hands-on experience building <strong>real-world production systems</strong>
+          — not just academic projects. I currently contribute to <strong>Inboxex CRM</strong>,
+          a live CRM platform used by clients in Egypt and international markets.
+        </p>
+        <p>
+          My focus is on <strong>clean architecture</strong>, <strong>performance optimization</strong>,
+          and <strong>solving complex problems</strong>. I've worked across the stack — from designing
+          backend APIs with NestJS and MongoDB, to authentication flows, Docker environments,
+          and Angular frontend integration.
+        </p>
+        <a href="about.html" class="btn btn-ghost btn-sm magnetic" style="margin-top: 12px;">
+          <span>More about me</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M1 8h14M9 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="about-stats" data-reveal="right">
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="40" data-suffix="%">0%</div>
+          <div class="stat-label">Faster report generation via SQL optimization</div>
+        </div>
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="96" data-suffix="%">0%</div>
+          <div class="stat-label">Accuracy in AI donation image validation</div>
+        </div>
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="150" data-suffix="+">0+</div>
+          <div class="stat-label">AI-generated visual assets delivered</div>
+        </div>
+        <div class="stat-card tilt">
+          <div class="stat-num" data-count="5" data-suffix="+">0+</div>
+          <div class="stat-label">AI platforms mastered</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECTS ============ -->
+<section class="section">
+  <div class="container">
+    <div data-reveal style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+      <div>
+        <span class="section-label">// Featured Work</span>
+        <h2 class="section-title">Selected projects</h2>
+      </div>
+      <a href="projects.html" class="btn btn-ghost btn-sm magnetic"><span>All projects →</span></a>
+    </div>
+    <div class="projects-grid" id="featuredProjects"></div>
+  </div>
+</section>
+
+<!-- ============ SKILLS PREVIEW ============ -->
+<section class="section">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label">// Skills</span>
+      <h2 class="section-title">Technical toolkit</h2>
+      <p class="section-desc">Technologies and tools I use daily to design, build, and ship backend systems.</p>
+    </div>
+    <div class="skills-categories">
+      <div class="skill-cat tilt" data-reveal>
+        <h3>⚙️ Backend & Frameworks</h3>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Node.js / NestJS</span><span class="level">95%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="95"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>TypeScript</span><span class="level">92%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Express</span><span class="level">90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Spring Boot</span><span class="level">75%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="75"></div></div>
+        </div>
+      </div>
+      <div class="skill-cat tilt" data-reveal>
+        <h3>🗄️ Databases & Tools</h3>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>MongoDB</span><span class="level">90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>SQL (MySQL/SQL Server)</span><span class="level">85%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Docker</span><span class="level">80%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-head"><span>Redis</span><span class="level">75%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-level="75"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section">
+  <div class="container container-narrow">
+    <div data-reveal>
+      <span class="section-label">// Experience</span>
+      <h2 class="section-title">Where I've worked</h2>
+    </div>
+    <div class="timeline" style="margin-top: 40px;">
+      <div class="timeline-item current" data-reveal>
+        <div class="timeline-date">2026 — Present · Giza, Egypt</div>
+        <div class="timeline-role">Freelance Software Developer</div>
+        <div class="timeline-company">Inboxex CRM</div>
+        <p class="timeline-desc">Contributing to backend & frontend of a production CRM platform used by active clients. Building APIs with NestJS, TypeScript, and MongoDB.</p>
+      </div>
+      <div class="timeline-item current" data-reveal>
+        <div class="timeline-date">2026 — Present</div>
+        <div class="timeline-role">AI Creator</div>
+        <div class="timeline-company">ArcTeam</div>
+        <p class="timeline-desc">Producing high-quality AI-generated images and videos using Generative AI and prompt engineering across multiple platforms.</p>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-date">2025</div>
+        <div class="timeline-role">Backend Developer Intern</div>
+        <div class="timeline-company">Misr Insurance</div>
+        <p class="timeline-desc">Engineered backend logic with Java & Spring Boot, implemented SQL interactions, and applied TypeScript.</p>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-date">2025</div>
+        <div class="timeline-role">Software Engineer Intern</div>
+        <div class="timeline-company">Misr Insurance</div>
+        <p class="timeline-desc">Built responsive web pages with HTML, CSS, and JavaScript.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section contact-card" data-reveal style="margin: 60px auto; max-width: 900px;">
+  <span class="section-label" style="justify-content: center;">// Let's talk</span>
+  <h2>Have a project in mind?</h2>
+  <p style="color: var(--text-muted); margin-bottom: 32px;">I'm open to freelance projects and full-time backend roles.</p>
+  <div class="contact-links">
+    <a href="contact.html" class="btn btn-primary magnetic"><span>Start a conversation</span></a>
+    <a href="mailto:fouadkadrii896@gmail.com" class="btn btn-ghost magnetic"><span>✉ Email</span></a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Fouad<span class="accent">.</span></h3>
+        <p>Backend developer building scalable systems with Node.js, NestJS, and TypeScript.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="main.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://github.com/fouadkadrii" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/fouadkadrii" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:fouadkadrii896@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Fouad KADRII</span>
+      <span>Built with ☕ and clean code</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="main.js"></script>
+<script src="cursor.js"></script>
+<script src="particles.js"></script>
+<script src="transitions.js"></script>
+<script>
+  // Render featured projects on home page
+  document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('featuredProjects');
+    if (!grid) return;
+    grid.innerHTML = getFeaturedProjects().map((p, i) => `
+      <a href="project.html?p=${p.slug}" class="project-card tilt" data-reveal style="--delay:${i * 0.1}s">
+        <div class="project-header">
+          <h3 class="project-title">${p.title}</h3>
+          <span class="project-badge ${p.badgeClass}">${p.badge}</span>
+        </div>
+        <p class="project-desc">${p.desc}</p>
+        <div class="project-tech">
+          ${p.tech.slice(0, 5).map(t => `<span class="tech-chip">${t}</span>`).join('')}
+        </div>
+        <div class="project-cta">
+          <span>View case study</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M1 8h14M9 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
+    `).join('');
+    if (window.initReveals) initReveals();
+    if (window.initTilt) initTilt();
+  });
+</script>
+</body>
+</html>

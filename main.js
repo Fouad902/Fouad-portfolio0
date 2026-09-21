@@ -6,7 +6,7 @@
 window.addEventListener('load', () => {
   const pre = document.getElementById('preloader');
   if (pre) {
-    setTimeout(() => pre.classList.add('hidden'), 900);
+    setTimeout(() => pre.classList.add('hidden'), 350);
   }
 });
 
@@ -330,11 +330,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 /* ============ ACTIVE NAV LINK ============ */
 function setActiveNav() {
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const path = window.location.pathname.split('/').pop() || 'main.html';
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
     const href = a.getAttribute('href');
     a.classList.remove('active');
-    if (href === path || (path === '' && href === 'index.html')) {
+    if (href === path || (path === '' && href === 'main.html')) {
       a.classList.add('active');
     }
   });
@@ -350,11 +350,34 @@ function initParallax() {
   const blobs = document.querySelectorAll('.bg-blob');
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
+    document.documentElement.style.setProperty('--bg-scroll-y', `${y * 0.08}px`);
     blobs.forEach((blob, i) => {
       const speed = 0.05 + i * 0.03;
       blob.style.transform = `translateY(${y * speed}px)`;
     });
   }, { passive: true });
+}
+
+/* ============ FLOATING BACKGROUND ELEMENTS ============ */
+function initFloatingElements() {
+  if (document.querySelector('.floating-elements')) return;
+
+  const layer = document.createElement('div');
+  layer.className = 'floating-elements';
+  const symbols = ['</>', '{ }', '01', '&&', '[]', 'API', '=>', '++'];
+
+  symbols.forEach((symbol, index) => {
+    const element = document.createElement('span');
+    element.className = 'floating-element';
+    element.textContent = symbol;
+    element.style.left = `${8 + (index * 13) % 86}%`;
+    element.style.top = `${12 + (index * 19) % 76}%`;
+    element.style.setProperty('--float-duration', `${9 + (index % 4) * 2}s`);
+    element.style.setProperty('--float-delay', `${index * -1.3}s`);
+    layer.appendChild(element);
+  });
+
+  document.body.appendChild(layer);
 }
 
 /* ============ INIT ALL ============ */
@@ -369,6 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMarquee();
   setActiveNav();
   initParallax();
+  initFloatingElements();
 });
 
 window.addEventListener('load', () => {
