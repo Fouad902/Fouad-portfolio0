@@ -4,23 +4,34 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #08080d;
-  --bg-soft: #101018;
-  --card: #14141e;
-  --card-hover: #1a1a26;
-  --border: #23232f;
-  --text: #eaeaf2;
-  --text-muted: #8a8aa0;
-  --accent: #6366f1;
-  --accent-2: #8b5cf6;
-  --accent-3: #ec4899;
-  --accent-glow: rgba(99, 102, 241, 0.4);
-  --success: #10b981;
-  --error: #ef4444;
-  --warning: #f59e0b;
+  /* ============ الخلفيات ============ */
+  --bg: #0a0b0e;
+  --bg-soft: #121318;
+  --card: #15171d;
+  --card-hover: #1b1e25;
+  --border: #252830;
+  
+  /* ============ النصوص ============ */
+  --text: #e5e7eb;
+  --text-muted: #8b8f9a;
+  
+  /* ============ الألوان الأساسية (هادية) ============ */
+  --accent: #5e9c8f;         /* Teal هادي */
+  --accent-2: #6b8e9c;       /* Slate Blue هادي */
+  --accent-3: #8b94a6;       /* Grey-Blue هادي */
+  --accent-glow: rgba(94, 156, 143, 0.25);
+  
+  /* ============ ألوان الحالات ============ */
+  --success: #4ade80;
+  --error: #f87171;
+  --warning: #fbbf24;
+  
+  /* ============ الحدود والزوايا ============ */
   --radius: 18px;
   --radius-sm: 12px;
   --radius-xs: 8px;
+  
+  /* ============ الحركة ============ */
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
