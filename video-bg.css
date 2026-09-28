@@ -1,0 +1,54 @@
+/* ============================================================
+   SITE VIDEO BACKGROUND — للفيديو في كل الصفحات
+   ============================================================ */
+
+.site-video-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.site-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  opacity: 0.35;   /* ← شفافية عشان المحتوى يبان */
+}
+
+.site-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: 
+    linear-gradient(to bottom, 
+      rgba(8, 8, 13, 0.85) 0%, 
+      rgba(8, 8, 13, 0.75) 50%, 
+      rgba(8, 8, 13, 0.9) 100%
+    );
+  pointer-events: none;
+}
+
+[data-theme="light"] .site-video-overlay {
+  background: 
+    linear-gradient(to bottom, 
+      rgba(248, 248, 252, 0.85) 0%, 
+      rgba(248, 248, 252, 0.75) 50%, 
+      rgba(248, 248, 252, 0.9) 100%
+    );
+}
+
+/* الموبايل: صورة بدل الفيديو */
+@media (max-width: 768px) {
+  .site-video { display: none; }
+  .site-video-bg {
+    background-image: url('hero-poster.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
