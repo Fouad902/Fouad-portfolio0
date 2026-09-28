@@ -411,3 +411,22 @@ window.initMagnetic = initMagnetic;
 window.initSplitText = initSplitText;
 window.initSkillBars = initSkillBars;
 window.fireConfetti = fireConfetti;
+
+/* ============ HERO PRISMA — Split Reveal ============ */
+(function initPrismaHero() {
+  const giant = document.getElementById('heroGiant');
+  if (!giant) return;
+
+  // Reveal words in the giant title
+  const words = giant.querySelectorAll('.pull-word');
+  words.forEach((word, i) => {
+    setTimeout(() => word.classList.add('revealed'), 200 + i * 150);
+  });
+
+  // Reveal side text
+  const tagline = document.querySelector('.hero-tagline');
+  const button = document.querySelector('.hero-btn-prisma');
+
+  setTimeout(() => tagline?.classList.add('revealed'), 800);
+  setTimeout(() => button?.classList.add('revealed'), 1100);
+})();
