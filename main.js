@@ -330,11 +330,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 /* ============ ACTIVE NAV LINK ============ */
 function setActiveNav() {
-  const path = window.location.pathname.split('/').pop() || 'main.html';
-  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-menu a, .hero-nav a').forEach(a => {
     const href = a.getAttribute('href');
     a.classList.remove('active');
-    if (href === path || (path === '' && href === 'main.html')) {
+    if (href === path || (path === '' && href === 'index.html')) {
       a.classList.add('active');
     }
   });
