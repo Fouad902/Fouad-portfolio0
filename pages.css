@@ -18,99 +18,75 @@
 }
 
 /* ============ Animated background ============ */
+/* ============ Hero Video Background ============ */
 .hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
   overflow: hidden;
+  background: #0a0a0f;
 }
 
-.hero-bg-layer {
+.hero-video {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.55;
-  will-change: transform;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
 }
 
-.hero-bg-1 {
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, #6366f1, transparent 70%);
-  top: -20%;
-  left: -10%;
-  animation: prismaFloat1 18s ease-in-out infinite;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 15, 0.7) 0%,
+    rgba(10, 10, 15, 0.4) 40%,
+    rgba(10, 10, 15, 0.85) 100%
+  );
+  pointer-events: none;
 }
 
-.hero-bg-2 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, #8b5cf6, transparent 70%);
-  bottom: -25%;
-  right: -10%;
-  animation: prismaFloat2 22s ease-in-out infinite;
+/* إخفاء البلوبز القديمة */
+.hero-bg-layer {
+  display: none;
 }
 
-.hero-bg-3 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, #ec4899, transparent 70%);
-  top: 40%;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: prismaFloat3 25s ease-in-out infinite;
-  opacity: 0.35;
-}
-
-@keyframes prismaFloat1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%      { transform: translate(80px, 100px) scale(1.1); }
-  66%      { transform: translate(-60px, 60px) scale(0.95); }
-}
-
-@keyframes prismaFloat2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(-120px, -80px) scale(1.2); }
-}
-
-@keyframes prismaFloat3 {
-  0%, 100% { transform: translateX(-50%) scale(1); }
-  50%      { transform: translateX(-30%) scale(0.85); }
-}
-
-/* Noise texture overlay */
 .hero-noise {
   position: absolute;
   inset: 0;
-  background-image:
-    repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0 1px, transparent 1px 3px);
+  z-index: 2;
+  background-image: repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0 1px, transparent 1px 3px);
   opacity: 0.6;
   mix-blend-mode: overlay;
   pointer-events: none;
 }
 
-/* Bottom-to-top vignette */
 .hero-vignette {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background: linear-gradient(
     to bottom,
     rgba(8, 8, 13, 0.5) 0%,
     transparent 30%,
     transparent 60%,
-    rgba(8, 8, 13, 0.85) 100%
+    rgba(8, 8, 13, 0.9) 100%
   );
   pointer-events: none;
 }
 
-[data-theme="light"] .hero-vignette {
-  background: linear-gradient(
-    to bottom,
-    rgba(248, 248, 252, 0.5) 0%,
-    transparent 30%,
-    transparent 60%,
-    rgba(248, 248, 252, 0.9) 100%
-  );
+/* الموبايل: استخدم صورة بدل الفيديو (أسرع) */
+@media (max-width: 768px) {
+  .hero-video { display: none; }
+  .hero-bg {
+    background-image: url('hero-poster.jpg');
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 /* ============ Top Navigation (Prisma style) ============ */
