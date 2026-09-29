@@ -4,37 +4,25 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* ============ الخلفيات ============ */
   --bg: #0a0b0e;
   --bg-soft: #121318;
   --card: #15171d;
   --card-hover: #1b1e25;
   --border: #252830;
-  
-  /* ============ النصوص ============ */
   --text: #e5e7eb;
   --text-muted: #8b8f9a;
-  
-  /* ============ الألوان الأساسية (هادية) ============ */
-  --accent: #5e9c8f;         /* Teal هادي */
-  --accent-2: #6b8e9c;       /* Slate Blue هادي */
-  --accent-3: #8b94a6;       /* Grey-Blue هادي */
+  --accent: #5e9c8f;         /* ← Teal هادي */
+  --accent-2: #6b8e9c;
+  --accent-3: #8b94a6;
   --accent-glow: rgba(94, 156, 143, 0.25);
-  
-  /* ============ ألوان الحالات ============ */
   --success: #4ade80;
   --error: #f87171;
   --warning: #fbbf24;
-  
-  /* ============ الحدود والزوايا ============ */
   --radius: 18px;
   --radius-sm: 12px;
   --radius-xs: 8px;
-  
-  /* ============ الحركة ============ */
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 [data-theme="light"] {
