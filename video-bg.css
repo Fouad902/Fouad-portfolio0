@@ -8,10 +8,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0;                /* ← بدل -1 */
+  z-index: -1;                    /* ← رجّعناها -1 عشان تبقى ورا كل حاجة */
   overflow: hidden;
   pointer-events: none;
-  /* ⚠️ مفيش background — عشان الفيديو يبان */
 }
 
 .site-video {
@@ -48,12 +47,6 @@
     rgba(248, 248, 252, 0.75) 50%,
     rgba(248, 248, 252, 0.9) 100%
   );
-}
-
-/* ⚠️ مهم: المحتوى كله يبقى فوق الفيديو */
-body > *:not(.site-video-bg) {
-  position: relative;
-  z-index: 1;
 }
 
 /* الموبايل: صورة بدل الفيديو */
