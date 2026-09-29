@@ -24,7 +24,8 @@
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  background: #0a0a0f;
+  background: transparent;
+  
 }
 
 .hero-video {
@@ -83,7 +84,7 @@
 @media (max-width: 768px) {
   .hero-video { display: none; }
   .hero-bg {
-    background-image: url('hero-poster.jpg');
+    background-image: url('hero-poster.png');
     background-size: cover;
     background-position: center;
   }
