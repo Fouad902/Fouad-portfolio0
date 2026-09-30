@@ -76,7 +76,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 
 /* Sections */
 .section {
-  padding: 60px 0 120px;
+  padding: 0 0 100px;
   position: relative;
   z-index: 1;
 }
