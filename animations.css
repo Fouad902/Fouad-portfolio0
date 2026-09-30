@@ -86,7 +86,7 @@
   width: 6px;
   height: 6px;
   background: var(--accent);
-  z-index: 999999;
+  z-index: 2147483647;
 }
 .cursor-ring {
   width: 38px;
@@ -287,36 +287,6 @@ body {
   isolation: isolate;
   background-color: var(--bg);
    cursor: none;
-}
-body::before {
-  content: '';
-  position: fixed;
-  inset: -8%;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.78), rgba(3, 3, 8, 0.86)),
-    url('https://images.unsplash.com/photo-1603481546238-487240415921?auto=format&fit=crop&w=2200&q=88');
-  background-size: cover, cover;
-  background-repeat: no-repeat;
-  background-position: center, center;
-  filter: brightness(0.7) saturate(0.85);
-  animation: backgroundImageDrift 8s ease-in-out infinite alternate;
-  will-change: transform, background-position;
-}
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at 18% 72%, rgba(99, 102, 241, 0.45), transparent 24%),
-    radial-gradient(ellipse at 82% 68%, rgba(236, 72, 153, 0.34), transparent 22%),
-    radial-gradient(ellipse at 50% 12%, rgba(139, 92, 246, 0.22), transparent 28%);
-  mix-blend-mode: screen;
-  opacity: 0.7;
-  animation: ledPulse 6s ease-in-out infinite alternate;
 }
 @keyframes ledPulse {
   0% { opacity: 0.45; transform: scale(0.98); }
