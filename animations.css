@@ -78,7 +78,7 @@
   position: fixed;
   top: 0; left: 0;
   pointer-events: none;
-  z-index: 9998;
+  z-index: 999999;
   border-radius: 50%;
   will-change: transform;
 }
@@ -86,7 +86,7 @@
   width: 6px;
   height: 6px;
   background: var(--accent);
-  z-index: 9999;
+  z-index: 999999;
 }
 .cursor-ring {
   width: 38px;
@@ -286,6 +286,7 @@ body {
   position: relative;
   isolation: isolate;
   background-color: var(--bg);
+   cursor: none;
 }
 body::before {
   content: '';
