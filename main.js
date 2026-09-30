@@ -268,7 +268,7 @@ form?.addEventListener('submit', async (e) => {
 
   try {
     // ⚠️ استبدل YOUR_FORM_ID بـ ID من formspree.io
-    const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    const res = await fetch('https://formspree.io/f/meaoqpqz', {
       method: 'POST',
       body: data,
       headers: { 'Accept': 'application/json' },
