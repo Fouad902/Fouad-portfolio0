@@ -21,8 +21,9 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.4;
+  opacity: 0.6;                   /* ← أوضح */
   pointer-events: none;
+  filter: none;                   /* ← مفيش blur */
 }
 
 .site-video-overlay {
@@ -33,9 +34,9 @@
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(8, 8, 13, 0.7) 0%,
-    rgba(8, 8, 13, 0.5) 50%,
-    rgba(8, 8, 13, 0.85) 100%
+    rgba(8, 8, 13, 0.5) 0%,       /* ← خفيف */
+    rgba(8, 8, 13, 0.3) 50%,
+    rgba(8, 8, 13, 0.6) 100%
   );
   pointer-events: none;
 }
