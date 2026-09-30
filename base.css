@@ -1,7 +1,7 @@
 /* ============================================================
    BASE — Reset, Variables, Typography
    ============================================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none; }
 
 :root {
   --bg: #0a0b0e;
@@ -48,7 +48,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   transition: background var(--transition), color var(--transition);
-  cursor: none;
+   cursor: none !important;
   min-height: 100vh;
 }
 
