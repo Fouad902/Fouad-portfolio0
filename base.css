@@ -39,18 +39,20 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  background-color: var(--bg);      /* ← الخلفية على html */
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
+  background: transparent;           /* ← body شفاف */
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
   transition: background var(--transition), color var(--transition);
-   cursor: none !important;
+  cursor: none !important;
   min-height: 100vh;
-   padding-top: 76px;
+  padding-top: 76px;
+  position: relative;                /* ← مهم */
 }
 
 @media (pointer: coarse) {
