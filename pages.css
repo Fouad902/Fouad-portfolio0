@@ -1035,6 +1035,47 @@
   color: var(--text-muted);
   font-family: 'JetBrains Mono', monospace;
 }
+/* ============================================================
+   FILTERS — Project Filter Tabs
+   ============================================================ */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 40px;
+  padding: 6px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: none;
+  transition: all var(--transition);
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn:hover {
+  color: var(--text);
+  background: var(--card-hover);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 900px) {
