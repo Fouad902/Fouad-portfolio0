@@ -421,6 +421,21 @@ window.initSplitText = initSplitText;
 window.initSkillBars = initSkillBars;
 window.fireConfetti = fireConfetti;
 
+/* ============ PROJECT CARDS — Mouse Tracking Glow ============ */
+(function initProjectCardGlow() {
+  document.addEventListener('mousemove', (e) => {
+    const card = e.target.closest('.project-card');
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    card.style.setProperty('--mouse-x', x + '%');
+    card.style.setProperty('--mouse-y', y + '%');
+  });
+})();
+
 /* ============ HERO PRISMA — Split Reveal ============ */
 (function initPrismaHero() {
   const giant = document.getElementById('heroGiant');
