@@ -182,7 +182,6 @@ function initTilt() {
   document.querySelectorAll('.tilt:not(.tilt-ready)').forEach(card => {
     card.classList.add('tilt-ready');
     card.addEventListener('mousemove', (e) => {
-      
       const r = card.getBoundingClientRect();
       const x = e.clientX - r.left;
       const y = e.clientY - r.top;
