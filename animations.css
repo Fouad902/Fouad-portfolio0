@@ -332,12 +332,7 @@
 }
 
 /* ============ BACKGROUND EFFECTS ============ */
-body {
-  position: relative;
-  isolation: isolate;
-  background-color: var(--bg);
-   cursor: none;
-}
+
 .bg-blob {
   position: fixed;
   border-radius: 50%;
