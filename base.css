@@ -52,7 +52,7 @@ body {
   cursor: none !important;
   min-height: 100vh;
   padding-top: 76px;
-  position: relative;                /* ← مهم */
+                /* ← مهم */
 }
 
 @media (pointer: coarse) {
