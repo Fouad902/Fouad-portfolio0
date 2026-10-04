@@ -316,7 +316,7 @@
     const grid = document.getElementById('featuredProjects');
     if (!grid) return;
     grid.innerHTML = getFeaturedProjects().map((p, i) => `
-      <a href="project.html?p=${p.slug}" class="project-card tilt" data-reveal style="--delay:${i * 0.1}s">
+  <a href="project.html?p=${p.slug}" class="project-card" data-reveal style="--delay:${i * 0.1}s">
         <div class="project-header">
           <h3 class="project-title">${p.title}</h3>
           <span class="project-badge ${p.badgeClass}">${p.badge}</span>
