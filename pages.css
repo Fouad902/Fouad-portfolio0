@@ -383,26 +383,39 @@
 }
 
 /* ============ PROJECTS GRID ============ */
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 24px;
 }
 
-.project-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 30px;
-  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  color: var(--text);
-  cursor: none;
+/* الحالة الابتدائية للكارت */
+.projects-grid .project-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s,
+              box-shadow 0.3s;
+  will-change: transform, opacity;
 }
-.project-card::before {
+
+/* لما الكارت يظهر */
+.projects-grid .project-card.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Hover state — رفع خفيف */
+.projects-grid .project-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(94, 156, 143, 0.15);
+}
+
+/* شريط علوي متدرج يظهر من الشمال */
+.projects-grid .project-card::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -410,9 +423,11 @@
   background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.5s var(--ease-out);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.project-card:hover::before { transform: scaleX(1); }
+.projects-grid .project-card:hover::before {
+  transform: scaleX(1);
+}
 .project-card:hover {
   border-color: var(--accent);
   box-shadow: 0 24px 48px rgba(0,0,0,0.3);
