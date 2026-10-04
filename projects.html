@@ -149,18 +149,30 @@
     if (window.initMagnetic) initMagnetic();
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    renderProjects('all');
+document.addEventListener('DOMContentLoaded', () => {
+  renderProjects('all');
+  
+  // إعادة تفعيل الـ reveal بعد ما الكروت تتضاف
+  setTimeout(() => {
+    if (window.initReveals) initReveals();
+    if (window.initTilt) initTilt();
+    if (window.initMagnetic) initMagnetic();
+  }, 50);
 
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentFilter = btn.dataset.filter;
-        renderProjects(currentFilter);
-      });
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      renderProjects(currentFilter);
+      
+      // إعادة تفعيل الـ reveal بعد فلتر جديد
+      setTimeout(() => {
+        if (window.initReveals) initReveals();
+      }, 50);
     });
   });
+});
 </script>
 </body>
 </html>
