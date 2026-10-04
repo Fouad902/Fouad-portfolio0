@@ -129,7 +129,7 @@
     const grid = document.getElementById('projectsGrid');
     const list = getProjectsByCategory(filter);
     grid.innerHTML = list.map((p, i) => `
-      <a href="project.html?p=${p.slug}" class="project-card tilt" data-reveal style="--delay:${i * 0.06}s">
+      <a href="project.html?p=${p.slug}" class="project-card" ...>
         <div class="project-header">
           <h3 class="project-title">${p.title}</h3>
           <span class="project-badge ${p.badgeClass}">${p.badge}</span>
