@@ -111,6 +111,15 @@ function initSplitText() {
 /* ============ SCROLL REVEAL ============ */
 function initReveals() {
   const els = document.querySelectorAll('[data-reveal]:not(.revealed)');
+  
+  // Stagger delay للكروت
+  const projectCards = document.querySelectorAll('.projects-grid .project-card');
+  projectCards.forEach((card, i) => {
+    if (!card.style.getPropertyValue('--delay')) {
+      card.style.setProperty('--delay', (i * 0.1).toString());
+    }
+  });
+
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
