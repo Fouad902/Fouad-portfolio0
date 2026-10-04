@@ -125,29 +125,29 @@
 <script>
   let currentFilter = 'all';
 
-  function renderProjects(filter) {
-    const grid = document.getElementById('projectsGrid');
-    const list = getProjectsByCategory(filter);
-    grid.innerHTML = list.map((p, i) => `
-      <a href="project.html?p=${p.slug}" class="project-card" ...>
-        <div class="project-header">
-          <h3 class="project-title">${p.title}</h3>
-          <span class="project-badge ${p.badgeClass}">${p.badge}</span>
-        </div>
-        <p class="project-desc">${p.desc}</p>
-        <div class="project-tech">
-          ${p.tech.slice(0, 5).map(t => `<span class="tech-chip">${t}</span>`).join('')}
-        </div>
-        <div class="project-cta">
-          <span>View case study</span>
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M1 8h14M9 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-      </a>
-    `).join('');
-    if (window.initReveals) initReveals();
-    if (window.initTilt) initTilt();
-    if (window.initMagnetic) initMagnetic();
-  }
+function renderProjects(filter) {
+  const grid = document.getElementById('projectsGrid');
+  const list = getProjectsByCategory(filter);
+  grid.innerHTML = list.map((p, i) => `
+    <a href="project.html?p=${p.slug}" class="project-card" data-reveal style="--delay:${i * 0.08}s">
+      <div class="project-header">
+        <h3 class="project-title">${p.title}</h3>
+        <span class="project-badge ${p.badgeClass}">${p.badge}</span>
+      </div>
+      <p class="project-desc">${p.desc}</p>
+      <div class="project-tech">
+        ${p.tech.slice(0, 5).map(t => `<span class="tech-chip">${t}</span>`).join('')}
+      </div>
+      <div class="project-cta">
+        <span>View case study</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M1 8h14M9 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+  `).join('');
+  
+  if (window.initReveals) initReveals();
+  if (window.initMagnetic) initMagnetic();
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   renderProjects('all');
