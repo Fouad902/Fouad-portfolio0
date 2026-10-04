@@ -72,57 +72,107 @@
 }
 
 /* ============ CUSTOM CURSOR ============ */
+/* ============ CUSTOM CURSOR — GLOW CIRCLE ============ */
 .cursor-dot,
 .cursor-ring,
 .cursor-trail {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   pointer-events: none;
   z-index: 2147483647;
   border-radius: 50%;
   will-change: transform;
 }
+
+/* النقطة المركزية المتوهجة */
 .cursor-dot {
   width: 8px;
   height: 8px;
   background: var(--accent);
-  box-shadow: 0 0 16px var(--accent), 0 0 32px var(--accent-glow);
+  box-shadow: 
+    0 0 16px var(--accent), 
+    0 0 32px var(--accent-glow),
+    0 0 48px var(--accent-glow);
+  z-index: 2147483647;
+  animation: cursorPulse 2s ease-in-out infinite;
 }
 
+@keyframes cursorPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 16px var(--accent), 
+      0 0 32px var(--accent-glow),
+      0 0 48px var(--accent-glow);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px var(--accent), 
+      0 0 40px var(--accent-glow),
+      0 0 60px var(--accent-glow);
+  }
+}
+
+/* الحلقة المتوهجة */
 .cursor-ring {
   width: 40px;
   height: 40px;
   border: 2px solid var(--accent);
-  box-shadow: 0 0 20px var(--accent-glow), inset 0 0 20px var(--accent-glow);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 
+    0 0 20px var(--accent-glow), 
+    inset 0 0 20px var(--accent-glow);
+  transition: 
+    width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s,
+    box-shadow 0.3s,
+    background 0.3s;
 }
 
+/* عند الـ Hover على الروابط/الأزرار */
 .cursor-ring.hovered {
   width: 70px;
   height: 70px;
   border-color: var(--accent-2);
-  box-shadow: 0 0 40px var(--accent-glow);
+  box-shadow: 
+    0 0 40px var(--accent-glow),
+    0 0 80px var(--accent-glow),
+    inset 0 0 30px var(--accent-glow);
+  background: rgba(94, 156, 143, 0.08);
 }
+
+/* "VIEW" على كروت المشاريع */
 .cursor-ring.viewing::after {
   content: 'VIEW';
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   color: var(--accent);
+  text-shadow: 0 0 10px var(--accent-glow);
 }
+
+/* الأثر — Trail */
 .cursor-trail {
   width: 8px;
   height: 8px;
   background: var(--accent-3);
   opacity: 0.5;
-  filter: blur(2px);
+  filter: blur(3px);
+  box-shadow: 0 0 15px var(--accent-3);
+  z-index: 2147483646;
 }
+
+/* الموبايل */
 @media (pointer: coarse) {
-  .cursor-dot, .cursor-ring, .cursor-trail { display: none; }
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-trail { 
+    display: none; 
+  }
 }
 
 /* ============ SCROLL PROGRESS ============ */
