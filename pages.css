@@ -401,13 +401,13 @@
   padding: 32px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: none;
   overflow: hidden;
   isolation: isolate;
   color: var(--text);
   text-decoration: none;
+  /* شيلنا transition الـ transform من هنا — Tilt هيتولى */
+  transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* الإطار المتدرج */
